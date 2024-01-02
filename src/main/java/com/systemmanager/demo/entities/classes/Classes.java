@@ -1,16 +1,19 @@
 package com.systemmanager.demo.entities.classes;
 
 import com.systemmanager.demo.entities.courses.Courses;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.util.List;
 
 @Entity
 public class Classes {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "o nome deve ser informado")
+    @Size(min=3, message = "o nome deve ter no minimo 3 caracteres")
     private String name;
 
     @ManyToMany(mappedBy = "classes") // "classes" é o nome do atributo em Courses

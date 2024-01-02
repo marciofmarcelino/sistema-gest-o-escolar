@@ -25,7 +25,7 @@ public class Student extends User {
         this.classe = classe;
     }
 
-    public Student(String id, String login, String password, UserRole role, Courses course, Classes classe) {
+    public Student(Long id, String login, String password, UserRole role, Courses course, Classes classe) {
         super(id, login, password, role);
         this.course = course;
         this.classe = classe;
